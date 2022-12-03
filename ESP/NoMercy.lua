@@ -99,8 +99,8 @@ local ESP; ESP = {
         Box_Outline = {Enabled = false, Color = Color3.new(0, 0, 0), Transparency = 0, Outline_Size = 1},
         Healthbar = {Enabled = false, Position = "Left", Color = Color3.new(1, 1, 1), Color_Lerp = Color3.fromRGB(40, 252, 3)},
         Name = {Enabled = false, Position = "Top", Color = Color3.new(1, 1, 1), Transparency = 0, OutlineColor = Color3.new(0, 0, 0)},
-        Distance = {Enabled = false, Position = "Bottom", Color = Color3.new(1, 1, 1), Transparency = 0, OutlineColor = Color3.new(0, 0, 0)},
         Tool = {Enabled = false, Position = "Right", Color = Color3.new(1, 1, 1), Transparency = 0, OutlineColor = Color3.new(0, 0, 0)},
+        Distance = {Enabled = false, Position = "Bottom", Color = Color3.new(1, 1, 1), Transparency = 0, OutlineColor = Color3.new(0, 0, 0)},
         Health = {Enabled = false, Position = "Right", Transparency = 0, OutlineColor = Color3.new(0, 0, 0)},
         Chams = {Enabled = false, Color = Color3.new(1, 1, 1), Mode = "Visible", OutlineColor = Color3.new(0, 0, 0), Transparency = 0.5, OutlineTransparency = 0},
         Image = {Enabled = false, Image = "Taxi", Raw = Images.Taxi},
@@ -243,8 +243,8 @@ do -- Player Metatable
         local Box, Box_Outline = self.Components.Box, self.Components.Box_Outline
         local Healthbar, Healthbar_Outline = self.Components.Healthbar, self.Components.Healthbar_Outline
         local Name, NameBold = self.Components.Name, self.Components.NameBold
-        local Distance, DistanceBold = self.Components.Distance, self.Components.DistanceBold
         local Tool, ToolBold = self.Components.Tool, self.Components.ToolBold
+        local Distance, DistanceBold = self.Components.Distance, self.Components.DistanceBold
         local Health, HealthBold = self.Components.Health, self.Components.HealthBold
         local Chams = _G.chamsEnabled == true and self.Components.Chams or true
         local Image = self.Components.Image
@@ -261,10 +261,10 @@ do -- Player Metatable
                 Healthbar_Outline.Visible = false
                 Name.Visible = false
                 NameBold.Visible = false
-                Distance.Visible = false
-                DistanceBold.Visible = false
                 Tool.Visible = false
                 ToolBold.Visible = false
+                Distance.Visible = false
+                DistanceBold.Visible = false
                 Health.Visible = false
                 HealthBold.Visible = false
                 if _G.chamsEnabled == true then
@@ -484,7 +484,7 @@ do -- Player Metatable
                         end
                         Right_Offset = Right_Offset + 10
                     end
-                    Tool.Text = ESP:Get_Tool(self.Player)
+                    Tool.Text = "[ " .. ESP:Get_Tool(self.Player) .. " ]"
                     Tool.Color = Is_Highlighted and Highlight_Color or Tool_Settings.Color
                     Tool.OutlineColor = Tool_Settings.OutlineColor
                     Tool.Transparency = Framework:Drawing_Transparency(Tool_Settings.Transparency)
@@ -520,8 +520,8 @@ do -- Player Metatable
                         end
                         Right_Offset = Right_Offset + 10
                     end
-                    Health.Text = tostring(math.floor(Current_Health + 0.5))
-                    Health.Color = Health_Lerp_Color
+                    Health.Text = tostring(math.floor(Current_Health + 0.5)) .. "%"
+                    Health.Color = Color3.fromRGB(255, 255, 255)
                     Health.OutlineColor = Health_Settings.OutlineColor
                     Health.Transparency = Framework:Drawing_Transparency(Health_Settings.Transparency)
                     Health.Visible = Health_Settings.Enabled
@@ -556,10 +556,10 @@ do -- Player Metatable
                     Healthbar_Outline.Visible = false
                     Name.Visible = false
                     NameBold.Visible = false
-                    Distance.Visible = false
-                    DistanceBold.Visible = false
                     Tool.Visible = false
                     ToolBold.Visible = false
+                    Distance.Visible = false
+                    DistanceBold.Visible = false
                     Health.Visible = false
                     HealthBold.Visible = false
                     if _G.chamsEnabled == true then
@@ -575,10 +575,10 @@ do -- Player Metatable
                 Healthbar_Outline.Visible = false
                 Name.Visible = false
                 NameBold.Visible = false
-                Distance.Visible = false
-                DistanceBold.Visible = false
                 Tool.Visible = false
                 ToolBold.Visible = false
+                Distance.Visible = false
+                DistanceBold.Visible = false
                 Health.Visible = false
                 HealthBold.Visible = false
                 if _G.chamsEnabled == true then
@@ -594,10 +594,10 @@ do -- Player Metatable
             Healthbar_Outline.Visible = false
             Name.Visible = false
             NameBold.Visible = false
-            Distance.Visible = false
-            DistanceBold.Visible = false
             Tool.Visible = false
             ToolBold.Visible = false
+            Distance.Visible = false
+            DistanceBold.Visible = false
             Health.Visible = false
             HealthBold.Visible = false
             if _G.chamsEnabled == true then
@@ -678,10 +678,10 @@ do -- ESP Functions
         Components.Healthbar_Outline = Framework:Draw("Square", {Thickness = 3, ZIndex = 1, Filled = true})
         Components.Name = Framework:Draw("Text", {Text = Instance.Name, Font = 2, Size = 13, Outline = true, Center = true})
         Components.NameBold = Framework:Draw("Text", {Text = Instance.Name, Font = 2, Size = 13, Center = true})
-        Components.Distance = Framework:Draw("Text", {Font = 2, Size = 13, Outline = true, Center = true})
-        Components.DistanceBold = Framework:Draw("Text", {Font = 2, Size = 13, Center = true})
         Components.Tool = Framework:Draw("Text", {Font = 2, Size = 13, Outline = true, Center = true})
         Components.ToolBold = Framework:Draw("Text", {Font = 2, Size = 13, Center = true})
+        Components.Distance = Framework:Draw("Text", {Font = 2, Size = 13, Outline = true, Center = true})
+        Components.DistanceBold = Framework:Draw("Text", {Font = 2, Size = 13, Center = true})
         Components.Health = Framework:Draw("Text", {Font = 2, Size = 13, Outline = true, Center = true})
         Components.HealthBold = Framework:Draw("Text", {Font = 2, Size = 13, Center = true})
         Components.Chams = _G.chamsEnabled == true and Framework:Instance("Highlight", {Parent = CoreGui, DepthMode = Enum.HighlightDepthMode.AlwaysOnTop}) or true
