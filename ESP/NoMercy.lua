@@ -424,6 +424,42 @@ do -- Player Metatable
                     NameBold.Position = Name.Position + Vector2.new(1, 0)
                     NameBold.Visible = Name.Visible and ESP.Settings.Bold_Text
 
+                    -- Tool
+                    local Tool_Settings = ESP.Settings.Tool
+                    local Tool_Position = Tool_Settings.Position
+                    if Tool_Position == "Top" then 
+                        Tool.Position = Vector2.new(X_Maximal + Box_Size.X / 2, Box_Position.Y) - Vector2.new(0, Tool.TextBounds.Y - Box_Size.Y + Top_Offset) 
+                        Top_Offset = Top_Offset + 10
+                    elseif Tool_Position == "Bottom" then
+                        Tool.Position = Vector2.new(Box_Size.X / 2 + Box_Position.X, Bottom_Offset) 
+                        Bottom_Offset = Bottom_Offset + 10
+                    elseif Tool_Position == "Left" then
+                        if Healthbar_Position == "Left" then
+                            Tool.Position = Health_Left_Pos_Outline - Vector2.new(Tool.TextBounds.X/2 - 2 + 4, -(100 * Health_Left_Size_Outline.Y / 100) + 2 - Left_Offset)
+                        else
+                            Tool.Position = Health_Left_Pos_Outline - Vector2.new(Tool.TextBounds.X/2 - 2, -(100 * Health_Left_Size_Outline.Y / 100) + 2 - Left_Offset)
+                        end
+                        Left_Offset = Left_Offset + 10
+                    elseif Tool_Position == "Right" then
+                        if Healthbar_Position == "Right" then
+                            Tool.Position = Vector2.new(X_Maximal + Box_Size.X + 4 + 4 + Tool.TextBounds.X / 2, Box_Position.Y + 2) - Vector2.new(Box_Size.X, -(100 * Health_Left_Size_Outline.Y / 100) + 2 - Right_Offset)
+                        else
+                            Tool.Position = Vector2.new(X_Maximal + Box_Size.X + 3 + Tool.TextBounds.X / 2, Box_Position.Y + 2) - Vector2.new(Box_Size.X, -(100 * Health_Left_Size_Outline.Y / 100) + 2 - Right_Offset)
+                        end
+                            Right_Offset = Right_Offset + 10
+                        end
+                            Tool.Text = "[ " .. ESP:Get_Tool(self.Player) .. " ]"
+                            Tool.Color = Is_Highlighted and Highlight_Color or Tool_Settings.Color
+                            Tool.OutlineColor = Tool_Settings.OutlineColor
+                            Tool.Transparency = Framework:Drawing_Transparency(Tool_Settings.Transparency)
+                            Tool.Visible = Tool_Settings.Enabled
+                            ToolBold.Text = ESP:Get_Tool(self.Player)
+                            ToolBold.Color = Is_Highlighted and Highlight_Color or Tool_Settings.Color
+                            ToolBold.OutlineColor = Tool_Settings.OutlineColor
+                            ToolBold.Transparency = Framework:Drawing_Transparency(Tool_Settings.Transparency)
+                            ToolBold.Position = Tool.Position + Vector2.new(1, 0)
+                            ToolBold.Visible = Tool.Visible and ESP.Settings.Bold_Text
+
                     -- Distance
                     local Distance_Settings = ESP.Settings.Distance
                     local Distance_Position = Distance_Settings.Position
@@ -459,42 +495,6 @@ do -- Player Metatable
                     DistanceBold.Transparency = Framework:Drawing_Transparency(Distance_Settings.Transparency)
                     DistanceBold.Position = Distance.Position + Vector2.new(1, 0)
                     DistanceBold.Visible = Distance.Visible and ESP.Settings.Bold_Text
-
-                    -- Tool
-                    local Tool_Settings = ESP.Settings.Tool
-                    local Tool_Position = Tool_Settings.Position
-                    if Tool_Position == "Top" then 
-                        Tool.Position = Vector2.new(X_Maximal + Box_Size.X / 2, Box_Position.Y) - Vector2.new(0, Tool.TextBounds.Y - Box_Size.Y + Top_Offset) 
-                        Top_Offset = Top_Offset + 10
-                    elseif Tool_Position == "Bottom" then
-                        Tool.Position = Vector2.new(Box_Size.X / 2 + Box_Position.X, Bottom_Offset) 
-                        Bottom_Offset = Bottom_Offset + 10
-                    elseif Tool_Position == "Left" then
-                        if Healthbar_Position == "Left" then
-                            Tool.Position = Health_Left_Pos_Outline - Vector2.new(Tool.TextBounds.X/2 - 2 + 4, -(100 * Health_Left_Size_Outline.Y / 100) + 2 - Left_Offset)
-                        else
-                            Tool.Position = Health_Left_Pos_Outline - Vector2.new(Tool.TextBounds.X/2 - 2, -(100 * Health_Left_Size_Outline.Y / 100) + 2 - Left_Offset)
-                        end
-                        Left_Offset = Left_Offset + 10
-                    elseif Tool_Position == "Right" then
-                        if Healthbar_Position == "Right" then
-                            Tool.Position = Vector2.new(X_Maximal + Box_Size.X + 4 + 4 + Tool.TextBounds.X / 2, Box_Position.Y + 2) - Vector2.new(Box_Size.X, -(100 * Health_Left_Size_Outline.Y / 100) + 2 - Right_Offset)
-                        else
-                            Tool.Position = Vector2.new(X_Maximal + Box_Size.X + 3 + Tool.TextBounds.X / 2, Box_Position.Y + 2) - Vector2.new(Box_Size.X, -(100 * Health_Left_Size_Outline.Y / 100) + 2 - Right_Offset)
-                        end
-                        Right_Offset = Right_Offset + 10
-                    end
-                    Tool.Text = "[ " .. ESP:Get_Tool(self.Player) .. " ]"
-                    Tool.Color = Is_Highlighted and Highlight_Color or Tool_Settings.Color
-                    Tool.OutlineColor = Tool_Settings.OutlineColor
-                    Tool.Transparency = Framework:Drawing_Transparency(Tool_Settings.Transparency)
-                    Tool.Visible = Tool_Settings.Enabled
-                    ToolBold.Text = ESP:Get_Tool(self.Player)
-                    ToolBold.Color = Is_Highlighted and Highlight_Color or Tool_Settings.Color
-                    ToolBold.OutlineColor = Tool_Settings.OutlineColor
-                    ToolBold.Transparency = Framework:Drawing_Transparency(Tool_Settings.Transparency)
-                    ToolBold.Position = Tool.Position + Vector2.new(1, 0)
-                    ToolBold.Visible = Tool.Visible and ESP.Settings.Bold_Text
 
                     -- Health
                     local Health_Settings = ESP.Settings.Health
