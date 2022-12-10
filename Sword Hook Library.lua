@@ -1,3 +1,12 @@
+--[[
+    TO DO:
+
+    Fix: DropDownToggle
+    Fix: Colors
+
+    Fix: Textbox (Try)
+]]
+
 function CreateMain(title)
 	local destroyIfExist = game.CoreGui:GetChildren()
 	for index, destroyIfExist in pairs(destroyIfExist) do
@@ -407,9 +416,9 @@ function CreateMain(title)
 
 			DropContainer.Name = "DropContainer"
 			DropContainer.Parent = SideDrop
-			DropContainer.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-			DropContainer.BackgroundTransparency = 0.7
-			DropContainer.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			DropContainer.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+			DropContainer.BackgroundTransparency = 0
+			DropContainer.BorderColor3 = Color3.fromRGB(12, 12, 12)
 			DropContainer.BorderSizePixel = 4
 			DropContainer.Position = UDim2.new(1.055, 0, 0, 0)
 			DropContainer.Size = UDim2.new(0, 193, 0, 72)
@@ -467,6 +476,14 @@ function CreateMain(title)
 				callback(Box.Text)
 			end)
 
+            TextBox.MouseButton1Down:Connect(function()
+				if Side.Visible then
+					Side.Visible = false
+				else 
+                    BoSidex.Visible = true
+				end
+			end)
+
 			Arrow.Name = "Arrow"
 			Arrow.Parent = TextBox
 			Arrow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -489,18 +506,14 @@ function CreateMain(title)
 			Side.Position = UDim2.new(1.055, 0, 0, 0)
 			Side.Size = UDim2.new(0, 193, 0, 24)
 			Side.Visible = false
-			Side.MouseEnter:Connect(function()
-				Side.Visible = true
-			end)
-			Side.MouseLeave:Connect(function()
-				Side.Visible = false
-			end)
 			
 			Hover.Name = "Hover"
 			Hover.Parent = TextBox
 			Hover.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			Hover.BackgroundTransparency = 1.000
 			Hover.Size = UDim2.new(0, 209, 0, 32)
+
+            --[[
 			Hover.MouseEnter:Connect(function()
 				local allTabs = game.CoreGui[tostring(title)].Top.Container:GetDescendants()
 				for index, allTabs in pairs(allTabs) do
@@ -508,12 +521,9 @@ function CreateMain(title)
 						allTabs.Visible = false
 					end
 				end
-				Side.Visible = true
 			end)
-			Side.MouseLeave:Connect(function()
-				Side.Visible = false
-			end)
-			
+			]]-- 
+
 			UIListLayout.Parent = Side
 			UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 
