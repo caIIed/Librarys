@@ -30,7 +30,7 @@ function CreateMain(title)
 	Top.Size = UDim2.new(0, 193, 0, 27)
 
     Highlight.Name = "Highlight"
-	Highlight.Parent = Rodus
+	Highlight.Parent = Top
 	Highlight.BackgroundColor3 = MainColor
 	Highlight.BackgroundTransparency = 0
 	Highlight.BorderColor3 = MainColor
@@ -119,9 +119,9 @@ function CreateMain(title)
 		local TabContainer = Instance.new("Frame")
 		TabContainer.Name = "TabContainer"
 		TabContainer.Parent = Tab
-		TabContainer.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-		TabContainer.BackgroundTransparency = 0.7
-		TabContainer.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		TabContainer.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+		TabContainer.BackgroundTransparency = 0
+		TabContainer.BorderColor3 = Color3.fromRGB(12, 12, 12)
 		TabContainer.BorderSizePixel = 4
 		TabContainer.Position = UDim2.new(1.0569948, 0, 0, 0)
 		TabContainer.Visible = false
