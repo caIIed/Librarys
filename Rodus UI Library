@@ -1,4 +1,4 @@
-local MainColor = Color3.FromRGB(93, 88, 157)
+local MainColor = Color3.fromRGB(93, 88, 157)
 
 function CreateMain(title)
 	local destroyIfExist = game.CoreGui:GetChildren()
