@@ -1,3 +1,5 @@
+local MainColor = Color3.FromRGB(93, 88, 157)
+
 function CreateMain(title)
 	local destroyIfExist = game.CoreGui:GetChildren()
 	for index, destroyIfExist in pairs(destroyIfExist) do
@@ -36,7 +38,7 @@ function CreateMain(title)
 	Title.Font = Enum.Font.SourceSans
 	Title.Text = title
 	Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-	Title.TextSize = 14.000
+	Title.TextSize = 21
 	Title.TextXAlignment = Enum.TextXAlignment.Center
 
 	Container.Name = "Container"
@@ -83,11 +85,11 @@ function CreateMain(title)
 		Tab.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 		Tab.BackgroundTransparency = 1.000
 		Tab.Size = UDim2.new(0, 193, 0, 24)
-		Tab.Font = Enum.Font.JosefinSans
-		Tab.Text = " "..text
+		Tab.Font = Enum.Font.SourceSans
+		Tab.Text = text
 		Tab.TextColor3 = Color3.fromRGB(255, 255, 255)
-		Tab.TextSize = 14.000
-		Tab.TextXAlignment = Enum.TextXAlignment.Left
+		Tab.TextSize = 20.000
+		Tab.TextXAlignment = Enum.TextXAlignment.Center
 
 		Arrow.Name = "Arrow"
 		Arrow.Parent = Tab
@@ -96,7 +98,7 @@ function CreateMain(title)
 		Arrow.Position = UDim2.new(0.907, 0, 0, 0)
 		Arrow.Size = UDim2.new(0, 18, 0, 21)
 		Arrow.Font = Enum.Font.SourceSans
-		Arrow.Text = ">>"
+		Arrow.Text = ">"
 		Arrow.TextColor3 = Color3.fromRGB(255, 255, 255)
 		Arrow.TextScaled = true
 		Arrow.TextSize = 14.000
@@ -124,8 +126,8 @@ function CreateMain(title)
 					end
 				end
 				TabContainer.Visible = true
-				Tab.TextColor3 = Color3.new(0, 255, 0)
-				Tab.Arrow.TextColor3 = Color3.new(0, 255, 0)
+				Tab.TextColor3 = MainColor
+				Tab.Arrow.TextColor3 = MainColor
 			else 
 				TabContainer.Visible = false
 				Tab.TextColor3 = Color3.new(255, 255, 255)
@@ -145,11 +147,11 @@ function CreateMain(title)
 			Button.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 			Button.BackgroundTransparency = 1.000
 			Button.Size = UDim2.new(0, 193, 0, 24)
-			Button.Font = Enum.Font.JosefinSans
+			Button.Font = Enum.Font.SourceSans
 			Button.Text = " "..buttonText
 			Button.TextColor3 = Color3.fromRGB(255, 255, 255)
-			Button.TextSize = 14.000
-			Button.TextXAlignment = Enum.TextXAlignment.Left
+			Button.TextSize = 20.000
+			Button.TextXAlignment = Enum.TextXAlignment.Center
 			Button.MouseEnter:Connect(function()
 				Button.Note.Visible = true
 			end)
@@ -157,7 +159,7 @@ function CreateMain(title)
 				Button.Note.Visible = false
 			end)
 			Button.MouseButton1Down:Connect(function()
-				Button.TextColor3 = Color3.new(0, 255, 0)
+				Button.TextColor3 = MainColor
 				wait(0.05)
 				Button.TextColor3 = Color3.new(255, 255, 255)
 				pcall(callback)
@@ -169,11 +171,11 @@ function CreateMain(title)
 			Note.BackgroundTransparency = 1.000
 			Note.Position = UDim2.new(1.04145074, 0, 0, 0)
 			Note.Size = UDim2.new(0, 193, 0, 24)
-			Note.Font = Enum.Font.JosefinSans
+			Note.Font = Enum.Font.SourceSans
 			Note.Text = note
-			Note.TextColor3 = Color3.fromRGB(0, 255, 0)
-			Note.TextSize = 14.000
-			Note.TextXAlignment = Enum.TextXAlignment.Left
+			Note.TextColor3 = MainColor
+			Note.TextSize = 20.000
+			Note.TextXAlignment = Enum.TextXAlignment.Center
 			Note.Visible = false
 			
 			parent.TabContainer.Size = UDim2.new(0, parent.TabContainer.UIListLayout.AbsoluteContentSize.X, 0, parent.TabContainer.UIListLayout.AbsoluteContentSize.Y)
@@ -187,11 +189,11 @@ function CreateMain(title)
 			Label.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 			Label.BackgroundTransparency = 1.000
 			Label.Size = UDim2.new(0, 193, 0, 24)
-			Label.Font = Enum.Font.JosefinSans
+			Label.Font = Enum.Font.SourceSans
 			Label.Text = " "..labelText
 			Label.TextColor3 = color3
-			Label.TextSize = 14.000
-			Label.TextXAlignment = Enum.TextXAlignment.Left
+			Label.TextSize = 20.000
+			Label.TextXAlignment = Enum.TextXAlignment.Center
 			
 			parent.TabContainer.Size = UDim2.new(0, parent.TabContainer.UIListLayout.AbsoluteContentSize.X, 0, parent.TabContainer.UIListLayout.AbsoluteContentSize.Y)
 		end
@@ -209,11 +211,11 @@ function CreateMain(title)
 			Button.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 			Button.BackgroundTransparency = 1.000
 			Button.Size = UDim2.new(0, 193, 0, 24)
-			Button.Font = Enum.Font.JosefinSans
+			Button.Font = Enum.Font.SourceSans
 			Button.Text = " "..buttonText
 			Button.TextColor3 = Color3.fromRGB(255, 255, 255)
-			Button.TextSize = 14.000
-			Button.TextXAlignment = Enum.TextXAlignment.Left
+			Button.TextSize = 20.000
+			Button.TextXAlignment = Enum.TextXAlignment.Center
 			Button.MouseEnter:Connect(function()
 				Button.Note.Visible = true
 			end)
@@ -223,9 +225,10 @@ function CreateMain(title)
 			Button.MouseButton1Down:Connect(function()
 				Toggle.Value = not Toggle.Value
 				toggled = Toggle.Value
-				if Button.TextColor3 == Color3.new(0, 255, 0) then
+				if Button.TextColor3 == MainColor then
 					Button.TextColor3 = Color3.new(255, 255, 255)
-				else Button.TextColor3 = Color3.new(0, 255, 0) 
+				else 
+                    Button.TextColor3 = MainColor
 				end
 				pcall(callback)
 			end)
@@ -235,11 +238,11 @@ function CreateMain(title)
 			Note.BackgroundTransparency = 1.000
 			Note.Position = UDim2.new(1.04145074, 0, 0, 0)
 			Note.Size = UDim2.new(0, 193, 0, 24)
-			Note.Font = Enum.Font.JosefinSans
+			Note.Font = Enum.Font.SourceSans
 			Note.Text = note
-			Note.TextColor3 = Color3.fromRGB(0, 255, 0)
-			Note.TextSize = 14.000
-			Note.TextXAlignment = Enum.TextXAlignment.Left
+			Note.TextColor3 = MainColor
+			Note.TextSize = 20.000
+			Note.TextXAlignment = Enum.TextXAlignment.Center
 			Note.Visible = false
 			
 			
@@ -257,13 +260,13 @@ function CreateMain(title)
 			SideDrop.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 			SideDrop.BackgroundTransparency = 1.000
 			SideDrop.Size = UDim2.new(0, 193, 0, 24)
-			SideDrop.Font = Enum.Font.JosefinSans
+			SideDrop.Font = Enum.Font.SourceSans
 			SideDrop.Text = " "..dropText
 			SideDrop.TextColor3 = Color3.fromRGB(255, 255, 255)
-			SideDrop.TextSize = 14.000
-			SideDrop.TextXAlignment = Enum.TextXAlignment.Left
+			SideDrop.TextSize = 20.000
+			SideDrop.TextXAlignment = Enum.TextXAlignment.Center
 			SideDrop.MouseButton1Down:Connect(function()
-				if SideDrop.TextColor3 == Color3.new(0, 255, 0) then
+				if SideDrop.TextColor3 == MainColor then
 					SideDrop.TextColor3 = Color3.new(255, 255, 255)
 					SideDrop.Arrow.TextColor3 = Color3.new(255, 255, 255)
 					DropContainer.Visible = false
@@ -276,8 +279,8 @@ function CreateMain(title)
 							allTabs.Parent.Arrow.TextColor3 = Color3.new(255, 255, 255)
 						end
 					end
-					SideDrop.TextColor3 = Color3.new(0, 255, 0)
-					SideDrop.Arrow.TextColor3 = Color3.new(0, 255, 0)
+					SideDrop.TextColor3 = MainColor
+					SideDrop.Arrow.TextColor3 = MainColor
 					DropContainer.Visible = true
 				end
 			end)
@@ -289,10 +292,10 @@ function CreateMain(title)
 			Arrow.Position = UDim2.new(0.906735778, 0, 0, 0)
 			Arrow.Size = UDim2.new(0, 18, 0, 21)
 			Arrow.Font = Enum.Font.SourceSans
-			Arrow.Text = ">>"
+			Arrow.Text = ">"
 			Arrow.TextColor3 = Color3.fromRGB(255, 255, 255)
 			Arrow.TextScaled = true
-			Arrow.TextSize = 14.000
+			Arrow.TextSize = 20.000
 			Arrow.TextWrapped = true
 
 			DropContainer.Name = "DropContainer"
@@ -315,13 +318,13 @@ function CreateMain(title)
 				Button.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 				Button.BackgroundTransparency = 1.000
 				Button.Size = UDim2.new(0, 193, 0, 24)
-				Button.Font = Enum.Font.JosefinSans
+				Button.Font = Enum.Font.SourceSans
 				Button.Text = " "..v
 				Button.TextColor3 = Color3.fromRGB(255, 255, 255)
-				Button.TextSize = 14.000
-				Button.TextXAlignment = Enum.TextXAlignment.Left
+				Button.TextSize = 20.000
+				Button.TextXAlignment = Enum.TextXAlignment.Center
 				Button.MouseButton1Down:Connect(function()
-					Button.TextColor3 = Color3.new(0, 255, 0)
+					Button.TextColor3 = MainColor
 					wait(0.05)
 					Button.TextColor3 = Color3.new(255, 255, 255)
 					callback(v)
@@ -342,13 +345,13 @@ function CreateMain(title)
 			SideDrop.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 			SideDrop.BackgroundTransparency = 1.000
 			SideDrop.Size = UDim2.new(0, 193, 0, 24)
-			SideDrop.Font = Enum.Font.JosefinSans
+			SideDrop.Font = Enum.Font.SourceSans
 			SideDrop.Text = " "..dropText
 			SideDrop.TextColor3 = Color3.fromRGB(255, 255, 255)
-			SideDrop.TextSize = 14.000
-			SideDrop.TextXAlignment = Enum.TextXAlignment.Left
+			SideDrop.TextSize = 20.000
+			SideDrop.TextXAlignment = Enum.TextXAlignment.Center
 			SideDrop.MouseButton1Down:Connect(function()
-				if SideDrop.TextColor3 == Color3.new(0, 255, 0) then
+				if SideDrop.TextColor3 == MainColor then
 					SideDrop.TextColor3 = Color3.new(255, 255, 255)
 					SideDrop.Arrow.TextColor3 = Color3.new(255, 255, 255)
 					DropContainer.Visible = false
@@ -361,8 +364,8 @@ function CreateMain(title)
 							allTabs.Parent.Arrow.TextColor3 = Color3.new(255, 255, 255)
 						end
 					end
-					SideDrop.TextColor3 = Color3.new(0, 255, 0)
-					SideDrop.Arrow.TextColor3 = Color3.new(0, 255, 0)
+					SideDrop.TextColor3 = MainColor
+					SideDrop.Arrow.TextColor3 = MainColor
 					DropContainer.Visible = true
 				end
 			end)
@@ -374,7 +377,7 @@ function CreateMain(title)
 			Arrow.Position = UDim2.new(0.906735778, 0, 0, 0)
 			Arrow.Size = UDim2.new(0, 18, 0, 21)
 			Arrow.Font = Enum.Font.SourceSans
-			Arrow.Text = ">>"
+			Arrow.Text = ">"
 			Arrow.TextColor3 = Color3.fromRGB(255, 255, 255)
 			Arrow.TextScaled = true
 			Arrow.TextSize = 14.000
@@ -400,15 +403,15 @@ function CreateMain(title)
 				Button.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 				Button.BackgroundTransparency = 1.000
 				Button.Size = UDim2.new(0, 193, 0, 24)
-				Button.Font = Enum.Font.JosefinSans
-				Button.Text = " "..v
+				Button.Font = Enum.Font.SourceSans
+				Button.Text = v
 				Button.TextColor3 = Color3.fromRGB(255, 255, 255)
-				Button.TextSize = 14.000
-				Button.TextXAlignment = Enum.TextXAlignment.Left
+				Button.TextSize = 20.000
+				Button.TextXAlignment = Enum.TextXAlignment.Center
 				Button.MouseButton1Down:Connect(function()
-					if Button.TextColor3 == Color3.new(0, 255, 0) then
+					if Button.TextColor3 == MainColor then
 					Button.TextColor3 = Color3.new(255, 255, 255)
-					else Button.TextColor3 = Color3.new(0, 255, 0) end
+					else Button.TextColor3 = MainColor end
 					callback(v)
 				end)
 				DropContainer.Size = UDim2.new(0, DropContainer.UIListLayout.AbsoluteContentSize.X, 0, DropContainer.UIListLayout.AbsoluteContentSize.Y)
@@ -429,13 +432,13 @@ function CreateMain(title)
 			TextBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 			TextBox.BackgroundTransparency = 1.000
 			TextBox.Size = UDim2.new(0, 193, 0, 24)
-			TextBox.Font = Enum.Font.JosefinSans
-			TextBox.Text = " "..buttonText
+			TextBox.Font = Enum.Font.SourceSans
+			TextBox.Text = buttonText
 			TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-			TextBox.TextSize = 14.000
+			TextBox.TextSize = 20.000
 			TextBox.TextXAlignment = Enum.TextXAlignment.Left
 			TextBox.MouseButton1Down:Connect(function()
-				TextBox.TextColor3 = Color3.new(0, 255, 0)
+				TextBox.TextColor3 = MainColor
 				wait(0.05)
 				TextBox.TextColor3 = Color3.new(255, 255, 255)
 				callback(Box.Text)
@@ -448,7 +451,7 @@ function CreateMain(title)
 			Arrow.Position = UDim2.new(0.906735778, 0, 0, 0)
 			Arrow.Size = UDim2.new(0, 18, 0, 21)
 			Arrow.Font = Enum.Font.SourceSans
-			Arrow.Text = ">>"
+			Arrow.Text = ">"
 			Arrow.TextColor3 = Color3.fromRGB(255, 255, 255)
 			Arrow.TextScaled = true
 			Arrow.TextSize = 14.000
@@ -496,10 +499,10 @@ function CreateMain(title)
 			Box.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			Box.BackgroundTransparency = 1.000
 			Box.Size = UDim2.new(0, 193, 0, 24)
-			Box.Font = Enum.Font.JosefinSans
+			Box.Font = Enum.Font.SourceSans
 			Box.Text = ""
 			Box.TextColor3 = Color3.fromRGB(255, 255, 255)
-			Box.TextSize = 14.000
+			Box.TextSize = 20.000
 			Box.TextWrapped = true
 			Box.PlaceholderText = placeholderText
 			parent.TabContainer.Size = UDim2.new(0, parent.TabContainer.UIListLayout.AbsoluteContentSize.X, 0, parent.TabContainer.UIListLayout.AbsoluteContentSize.Y)
