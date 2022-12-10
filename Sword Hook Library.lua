@@ -23,7 +23,7 @@ function CreateMain(title)
 	Top.Name = "Top"
 	Top.Parent = Rodus
 	Top.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
-	Top.BackgroundTransparency = 0.7
+	Top.BackgroundTransparency = 0
 	Top.BorderColor3 = Color3.fromRGB(12, 12, 12)
 	Top.BorderSizePixel = 4
 	Top.Position = UDim2.new(0, 15, 0, 15)
@@ -32,9 +32,9 @@ function CreateMain(title)
     Highlight.Name = "Highlight"
 	Highlight.Parent = Rodus
 	Highlight.BackgroundColor3 = MainColor
-	Highlight.BackgroundTransparency = 0.7
+	Highlight.BackgroundTransparency = 0
 	Highlight.BorderColor3 = MainColor
-	Highlight.BorderSizePixel = 4
+	Highlight.BorderSizePixel = 0
 	Highlight.Position = UDim2.new(0, 15, 0, 15)
 	Highlight.Size = UDim2.new(0, 193, 0, 1)
 
@@ -53,8 +53,8 @@ function CreateMain(title)
 
 	Container.Name = "Container"
 	Container.Parent = Top
-	Container.BackgroundColor3 = Color3.fromRGB(12, 12, 12)
-	Container.BackgroundTransparency = 1
+	Container.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+	Container.BackgroundTransparency = 0
 	Container.BorderColor3 = Color3.fromRGB(12, 12, 12)
 	Container.BorderSizePixel = 4
 	Container.Position = UDim2.new(0, 0, 1.29629624, 0)
