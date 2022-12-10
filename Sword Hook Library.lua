@@ -480,7 +480,7 @@ function CreateMain(title)
 				if Side.Visible then
 					Side.Visible = false
 				else 
-                    BoSidex.Visible = true
+                    Side.Visible = true
 				end
 			end)
 
