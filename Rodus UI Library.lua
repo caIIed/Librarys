@@ -6,10 +6,11 @@ function CreateMain(title)
 			destroyIfExist:Destroy()
 		end
 	end
-    
+
     local MainColor = Color3.fromRGB(93, 88, 157)
 	local Rodus = Instance.new("ScreenGui")
 	local Top = Instance.new("Frame")
+    local Highlight =  Instance.new("Frame")
 	local Title = Instance.new("TextLabel")
 	local Container = Instance.new("Frame")
 	local UIListLayout = Instance.new("UIListLayout")
@@ -21,12 +22,21 @@ function CreateMain(title)
 
 	Top.Name = "Top"
 	Top.Parent = Rodus
-	Top.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	Top.BackgroundColor3 = Color3.fromRGB(17, 17, 17)
 	Top.BackgroundTransparency = 0.7
-	Top.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Top.BorderColor3 = Color3.fromRGB(12, 12, 12)
 	Top.BorderSizePixel = 4
 	Top.Position = UDim2.new(0, 15, 0, 15)
 	Top.Size = UDim2.new(0, 193, 0, 27)
+
+    Highlight.Name = "Highlight"
+	Highlight.Parent = Rodus
+	Highlight.BackgroundColor3 = MainColor
+	Highlight.BackgroundTransparency = 0.7
+	Highlight.BorderColor3 = MainColor
+	Highlight.BorderSizePixel = 4
+	Highlight.Position = UDim2.new(0, 15, 0, 15)
+	Highlight.Size = UDim2.new(0, 193, 0, 1)
 
 	Title.Name = "Title"
 	Title.Parent = Top
@@ -43,9 +53,9 @@ function CreateMain(title)
 
 	Container.Name = "Container"
 	Container.Parent = Top
-	Container.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	Container.BackgroundTransparency = 0.7
-	Container.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Container.BackgroundColor3 = Color3.fromRGB(12, 12, 12)
+	Container.BackgroundTransparency = 1
+	Container.BorderColor3 = Color3.fromRGB(12, 12, 12)
 	Container.BorderSizePixel = 4
 	Container.Position = UDim2.new(0, 0, 1.29629624, 0)
 	Container.Size = UDim2.new(0, 193, 0, 24)
