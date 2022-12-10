@@ -1,5 +1,3 @@
-local MainColor = Color3.fromRGB(93, 88, 157)
-
 function CreateMain(title)
 	local destroyIfExist = game.CoreGui:GetChildren()
 	for index, destroyIfExist in pairs(destroyIfExist) do
@@ -8,6 +6,8 @@ function CreateMain(title)
 			destroyIfExist:Destroy()
 		end
 	end
+    
+    local MainColor = Color3.fromRGB(93, 88, 157)
 	local Rodus = Instance.new("ScreenGui")
 	local Top = Instance.new("Frame")
 	local Title = Instance.new("TextLabel")
