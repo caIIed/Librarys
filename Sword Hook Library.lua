@@ -35,7 +35,7 @@ function CreateMain(title)
 	Highlight.BackgroundTransparency = 0
 	Highlight.BorderColor3 = MainColor
 	Highlight.BorderSizePixel = 0
-	Highlight.Position = UDim2.new(0, 15, 0, 15)
+	Highlight.Position = UDim2.new(0, 0, 0, 0)
 	Highlight.Size = UDim2.new(0, 193, 0, 1)
 
 	Title.Name = "Title"
@@ -193,17 +193,27 @@ function CreateMain(title)
 		
 		function CreateLabel(parent, labelText, color3)
 			local Label = Instance.new("TextLabel")
+            local Highlight2 = Instance.new("Frame")
 
 			Label.Name = labelText
 			Label.Parent = parent.TabContainer
 			Label.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 			Label.BackgroundTransparency = 1.000
-			Label.Size = UDim2.new(0, 193, 0, 24)
+			Label.Size = UDim2.new(0, 193, 0, 28)
 			Label.Font = Enum.Font.SourceSans
-			Label.Text = " "..labelText
+			Label.Text = labelText
 			Label.TextColor3 = color3
 			Label.TextSize = 20.000
 			Label.TextXAlignment = Enum.TextXAlignment.Center
+
+            Highlight.Name = "Highlight"
+            Highlight.Parent = Label
+            Highlight.BackgroundColor3 = MainColor
+            Highlight.BackgroundTransparency = 0
+            Highlight.BorderColor3 = MainColor
+            Highlight.BorderSizePixel = 0
+            Highlight.Position = UDim2.new(0, 0, 0, 0)
+            Highlight.Size = UDim2.new(0, 193, 0, 1)
 			
 			parent.TabContainer.Size = UDim2.new(0, parent.TabContainer.UIListLayout.AbsoluteContentSize.X, 0, parent.TabContainer.UIListLayout.AbsoluteContentSize.Y)
 		end
@@ -446,7 +456,7 @@ function CreateMain(title)
 			TextBox.Text = buttonText
 			TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 			TextBox.TextSize = 20.000
-			TextBox.TextXAlignment = Enum.TextXAlignment.Left
+			TextBox.TextXAlignment = Enum.TextXAlignment.Center
 			TextBox.MouseButton1Down:Connect(function()
 				TextBox.TextColor3 = MainColor
 				wait(0.05)
