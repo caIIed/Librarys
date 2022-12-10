@@ -34,10 +34,10 @@ function CreateMain(title)
 	Title.BorderSizePixel = 0
 	Title.Size = UDim2.new(0, 193, 0, 27)
 	Title.Font = Enum.Font.SourceSans
-	Title.Text = " "..title
+	Title.Text = title
 	Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 	Title.TextSize = 14.000
-	Title.TextXAlignment = Enum.TextXAlignment.Left
+	Title.TextXAlignment = Enum.TextXAlignment.Center
 
 	Container.Name = "Container"
 	Container.Parent = Top
