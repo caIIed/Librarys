@@ -197,23 +197,25 @@ function CreateMain(title)
 
 			Label.Name = labelText
 			Label.Parent = parent.TabContainer
-			Label.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-			Label.BackgroundTransparency = 1.000
-			Label.Size = UDim2.new(0, 193, 0, 28)
+			Label.BackgroundColor3 = Color3.fromRGB(12, 12, 12)
+            Label.BorderColor3 = Color3.fromRGB(12, 12, 12)
+            Label.BorderSizePixel = 0
+			Label.BackgroundTransparency = 0
+			Label.Size = UDim2.new(0, 193, 0, 35)
 			Label.Font = Enum.Font.SourceSans
 			Label.Text = labelText
 			Label.TextColor3 = color3
 			Label.TextSize = 20.000
 			Label.TextXAlignment = Enum.TextXAlignment.Center
 
-            Highlight.Name = "Highlight"
-            Highlight.Parent = Label
-            Highlight.BackgroundColor3 = MainColor
-            Highlight.BackgroundTransparency = 0
-            Highlight.BorderColor3 = MainColor
-            Highlight.BorderSizePixel = 0
-            Highlight.Position = UDim2.new(0, 0, 0, 0)
-            Highlight.Size = UDim2.new(0, 193, 0, 1)
+            Highlight2.Name = "Highlight"
+            Highlight2.Parent = Label
+            Highlight2.BackgroundColor3 = MainColor
+            Highlight2.BackgroundTransparency = 0
+            Highlight2.BorderColor3 = MainColor
+            Highlight2.BorderSizePixel = 0
+            Highlight2.Position = UDim2.new(0, 0, 0, 2)
+            Highlight2.Size = UDim2.new(0, 193, 0, 1)
 			
 			parent.TabContainer.Size = UDim2.new(0, parent.TabContainer.UIListLayout.AbsoluteContentSize.X, 0, parent.TabContainer.UIListLayout.AbsoluteContentSize.Y)
 		end
