@@ -247,7 +247,7 @@ Menu_Frame.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
 Menu_Frame.BorderColor3 = Color3.fromRGB(40, 40, 40)
 Menu_Frame.BorderMode = Enum.BorderMode.Inset
 Menu_Frame.Position = UDim2.new(0.5, -250, 0.5, -275)
-Menu_Frame.Size = UDim2.new(0, 500, 0, 550)
+Menu_Frame.Size = UDim2.new(0, 380, 0, 400)
 Menu_Frame.Visible = false
 Menu_Frame.Parent = Menu.Screen
 CreateStroke(Menu_Frame, Color3.new(), 2)
