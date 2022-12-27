@@ -1,11 +1,3 @@
--- // make multiselect in order
--- // add border pixel math to dragging
--- // containers canvasscroll update on setvisible
--- // Dragging sys has errors
--- // I think something was wrong with the keybinds/indicators tweening
--- // Menu Effects (OnHover, OnClick)
-
-
 local Settings = {
     Accent = Color3.fromHex("#8F30A7"),
     Font = Enum.Font.SourceSans,
