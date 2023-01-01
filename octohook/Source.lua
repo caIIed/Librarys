@@ -4782,12 +4782,12 @@ end
 
 function library:CreateSettingsTab(menu, name)
     local settingsTab = menu:AddTab(name, 999);
-    local configSection = settingsTab:AddSection('config', 2);
-    local mainSection = settingsTab:AddSection('main', 2);
-    local themeSection = settingsTab:AddSection('theme', 1);
-    local extraSection = settingsTab:AddSection('extra', 1);
-    configSection:AddBox({text = 'config name', flag = 'configinput'})
-    configSection:AddList({text = 'config', flag = 'selectedconfig'})
+    local configSection = settingsTab:AddSection('Config', 2);
+    local mainSection = settingsTab:AddSection('Main', 2);
+    local themeSection = settingsTab:AddSection('Theme', 1);
+    local extraSection = settingsTab:AddSection('Extra', 1);
+    configSection:AddBox({text = 'Config Name', flag = 'configinput'})
+    configSection:AddList({text = 'Config', flag = 'selectedconfig'})
     
     local function refreshConfigs()
         library.options.selectedconfig:ClearValues();
