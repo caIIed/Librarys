@@ -4888,8 +4888,8 @@ function library:CreateSettingsTab(menu, name)
     extraSection:AddList({text = 'position', flag = 'watermark_pos', selected = 'Custom', values = {'Top', 'Top Left', 'Top Right', 'Bottom Left', 'Bottom Right', 'Custom'}, callback = function(val)
         library.watermark.lock = val;
     end})
-    extraSection:AddSlider({text = 'custom X', flag = 'watermark_x', suffix = '%', min = 0, max = 100, increment = .1});
-    extraSection:AddSlider({text = 'custom Y', flag = 'watermark_y', suffix = '%', min = 0, max = 100, increment = .1});
+    extraSection:AddSlider({text = 'custom X', flag = 'watermark_x', suffix = '%', min = 0, max = 100, increment = .1, value = 8.5});
+    extraSection:AddSlider({text = 'custom Y', flag = 'watermark_y', suffix = '%', min = 0, max = 100, increment = .1, value = 1});
 
     local themeStrings = {};
     for _,v in next, library.themes do
