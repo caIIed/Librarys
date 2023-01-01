@@ -4780,8 +4780,8 @@ function library:init()
 
 end
 
-function library:CreateSettingsTab(menu)
-    local settingsTab = menu:AddTab('settings', 999);
+function library:CreateSettingsTab(menu, name)
+    local settingsTab = menu:AddTab(name, 999);
     local configSection = settingsTab:AddSection('config', 2);
     local mainSection = settingsTab:AddSection('main', 2);
     local themeSection = settingsTab:AddSection('theme', 1);
