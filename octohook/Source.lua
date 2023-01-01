@@ -78,6 +78,8 @@ local library = {
     cheatname = startupArgs.cheatname;
     gamename = startupArgs.gamename or 'universal';
     fileext = startupArgs.fileext or '.txt';
+    discordinvite = startupArgs.discordinvite;
+    discordcode = startupArgs.discordcode;
 }
 
 library.themes = {
@@ -4849,7 +4851,7 @@ function library:CreateSettingsTab(menu)
 			Body = game:GetService('HttpService'):JSONEncode({
 				cmd = 'INVITE_BROWSER',
 				nonce = game:GetService('HttpService'):GenerateGUID(false),
-				args = {code = 'Va8VQnNfGQ'}
+				args = {code = library.discordcode}
 			})
 		})
         if res.Success then
@@ -4861,7 +4863,7 @@ function library:CreateSettingsTab(menu)
         setclipboard('Roblox.GameLauncher.joinGameInstance('..game.PlaceId..',"'..game.JobId..'")')
     end})
     mainSection:AddButton({text = 'copy discord invite',callback = function()
-        setclipboard('https://discord.gg/calling')
+        setclipboard(library.discordinvite)
     end})
     mainSection:AddButton({text = 'rejoin',confirm = true, callback = function()
         game.TeleportService:Teleport(game.PlaceId)
