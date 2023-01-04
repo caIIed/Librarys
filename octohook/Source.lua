@@ -78,8 +78,9 @@ local library = {
     cheatname = startupArgs.cheatname;
     gamename = startupArgs.gamename or 'universal';
     fileext = startupArgs.fileext or '.txt';
-    discordinvite = startupArgs.discordinvite;
-    discordcode = startupArgs.discordcode;
+    discordinvite = startupArgs.discordinvite or 'lol';
+    discordcode = startupArgs.discordcode or 'penis';
+    menukey = startupArgs.menukey or Enum.KeyCode.RightShift;
 }
 
 library.themes = {
@@ -4821,7 +4822,7 @@ function library:CreateSettingsTab(menu, name)
 
     refreshConfigs()
 
-    mainSection:AddBind({text = 'open / close', flag = 'togglebind', nomouse = true, noindicator = true, bind = Enum.KeyCode.End, callback = function()
+    mainSection:AddBind({text = 'open / close', flag = 'togglebind', nomouse = true, noindicator = true, bind = library.menukey, callback = function()
         library:SetOpen(not library.open)
     end});
 
