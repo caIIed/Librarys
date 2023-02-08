@@ -23,10 +23,10 @@ local library = {
 		msg = Color3.new(1,1,1)
 	},
 	folders = {
-		main = 'eclipse',
-		assets = 'eclipse/assets',
-		configs = 'eclipse/configs',
-		backups = 'eclipse/configs/backups',
+		main = 'tokyohook',
+		assets = 'tokyohook/assets',
+		configs = 'tokyohook/configs',
+		backups = 'tokyohook/configs/backups',
 	},
 	shared = {
 		initialized = false,
