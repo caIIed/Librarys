@@ -2540,6 +2540,21 @@ do
                 return setmetatable(window, library)
             end
             --
+            function library:UpdateColor(ColorType, ColorValue)
+                local ColorType = ColorType:lower()
+                --
+                theme[ColorType] = ColorValue
+                --
+                for Index, Value in pairs(library.colors) do
+                    for Index2, Value2 in pairs(Value) do
+                        if Value2 == ColorType then
+                             Index[Index2] = theme[Value2]
+                         end
+                    end
+               end
+               return library, library.pointers, theme
+            end
+            --
             function library:Page(info)
                 local info = info or {}
                 local name = info.name or info.Name or info.title or info.Title or "New Page"
