@@ -3882,7 +3882,7 @@ do
                 end
                 --
                 function toggle:Set(bool)
-                    if typeof(bool) == "boolean" then
+                    if bool or not bool then
                         toggle.current = bool
                         toggle_frame.Color = toggle.current == true and theme.accent or theme.lightcontrast
                         --
