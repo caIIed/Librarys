@@ -2669,7 +2669,7 @@ do
                         window.currentPage.page_button_color.Color = theme.darkcontrast
                         window.currentPage.page_button_title.Color = theme.textdark
                         window.currentPage.Page_accent.Visible = false
-                        window.currentPage.page_button_title.Color = theme.textcolor
+                        window.currentPage.page_button_title.Color = theme.accent
                         window.currentPage.open = false
                         --
                         library.colors[window.currentPage.page_button_color] = {
@@ -2678,7 +2678,7 @@ do
                         --
                         library.colors[window.currentPage.page_button_title] = {
                             OutlineColor = "textborder",
-                            Color = "textdark"
+                            Color = "accent"
                         }
                         --
                         for i,v in pairs(window.currentPage.sections) do
@@ -2695,7 +2695,6 @@ do
                     page_button_color.Color = theme.lightcontrast
                     page_button_title.Color = theme.textcolor
                     window.currentPage.Page_accent.Visible = true
-                    window.currentPage.page_button_title.Color = theme.accent
                     page.open = true
                     --
                     library.colors[page_button_color] = {
