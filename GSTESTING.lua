@@ -1262,6 +1262,10 @@ do
                         window.VisualPreview.Fading = false
                     end
                     --
+                    function window.VisualPreview:SetVisible(State)
+                        window.VisualPreview.Visible = State
+                    end
+                    --
                     function window.VisualPreview:SetComponentProperty(Component, Property, State, Index, In)
                         for Index2, Value in pairs(window.VisualPreview.Components[Component]) do
                             
