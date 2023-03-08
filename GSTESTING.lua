@@ -44,9 +44,9 @@ do
             hovers = {},
             Relations = {},
             folders = {
-                main = "Atlanta",
-                assets = "Atlanta/Images",
-                configs = "Atlanta/Configs"
+                main = "Tokyohook",
+                assets = "Tokyohook/Images",
+                configs = "Tokyohook/Configs"
             },
             shared = {
                 initialized = false,
