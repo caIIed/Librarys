@@ -1352,7 +1352,7 @@ do
                         local preview_heatlhbar = utility:Create("Frame", {Vector2.new(1, 1), preview_heatlhbaroutline}, {
                             Size = utility:Size(1, -2, 1, -2, preview_heatlhbaroutline),
                             Position = utility:Position(0, 1, 0, 1, preview_heatlhbaroutline),
-                            Color = Color3.fromRGB(255, 0, 0),
+                            Color = Color3.fromRGB(0, 255, 0),
                             Filled = true
                         }, window.VisualPreview.Drawings);healthbar = preview_heatlhbar
                         --
@@ -1550,7 +1550,7 @@ do
                             Text = "<- Number", --Display\nMoving\nJumping\nDesynced"
                             Size = theme.textsize,
                             Font = theme.font,
-                            Color = Color3.fromRGB(0, 255, 0),
+                            Color = Color3.fromRGB(255, 255, 255),
                             OutlineColor = theme.textborder,
                             Center = false,
                             Position = utility:Position(0, 0, 0, 5, preview_heatlhbar)
