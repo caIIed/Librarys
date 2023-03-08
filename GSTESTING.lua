@@ -2695,6 +2695,7 @@ do
                     page_button_color.Color = theme.lightcontrast
                     page_button_title.Color = theme.textcolor
                     window.currentPage.Page_accent.Visible = true
+                    window.currentPage.page_button_title = theme.accent
                     page.open = true
                     --
                     library.colors[page_button_color] = {
