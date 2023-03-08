@@ -2617,7 +2617,7 @@ do
                 --
                 library.colors[page_button_title] = {
                     OutlineColor = "textborder",
-                    Color = "accent"
+                    Color = "textdark"
                 }
                 
                 local Page_accent = utility:Create("Frame", {Vector2.new(0,0), page_button_color}, {
@@ -2669,7 +2669,7 @@ do
                         window.currentPage.page_button_color.Color = theme.darkcontrast
                         window.currentPage.page_button_title.Color = theme.textdark
                         window.currentPage.Page_accent.Visible = false
-                        window.currentPage.page_button_title.Color = theme.textcolor
+                        window.currentPage.page_button_title.Color = theme.textdark
                         window.currentPage.open = false
                         --
                         library.colors[window.currentPage.page_button_color] = {
@@ -2695,20 +2695,20 @@ do
                     page_button_color.Color = theme.lightcontrast
                     page_button_title.Color = theme.textcolor
                     window.currentPage.Page_accent.Visible = true
-                    window.currentPage.page_button_title.Color = theme.accent
                     page.open = true
                     --
                     library.colors[page_button_color] = {
                         Color = "lightcontrast"
                     }
                     --
-                    library.colors[window.currentPage.page_button_title] = {
-                        Color = "accent"
-                    }
-                    --
                     library.colors[page_button_title] = {
                         OutlineColor = "textborder",
                         Color = "textcolor"
+                    }
+                    --
+                    library.colors[window.currentPage.page_button_title] = {
+                        OutlineColor = "textborder",
+                        Color = "accent"
                     }
                     --
                     for i,v in pairs(page.sections) do
