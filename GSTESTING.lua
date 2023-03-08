@@ -2617,7 +2617,7 @@ do
                 --
                 library.colors[page_button_title] = {
                     OutlineColor = "textborder",
-                    Color = "textdark"
+                    Color = "accent"
                 }
                 
                 local Page_accent = utility:Create("Frame", {Vector2.new(0,0), page_button_color}, {
