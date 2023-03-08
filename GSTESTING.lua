@@ -1211,8 +1211,8 @@ do
                         local Color = ColorLerp(Smoothened, window.VisualPreview.Color1, window.VisualPreview.Color2)
                         --
                         healthvalue.Text = "<- " .. math.round(Smoothened * 100)
-                        healthvalue.Color = Color
-                        healthbar.Color = Color
+                        healthvalue.Color = Color3.fromRGB(255, 255, 255)
+                        healthbar.Color = Color3.fromRGB(0, 255, 0)
                         healthbar.Size = utility:Size(1, -2, 0, Size, healthbaroutline)
                         healthbar.Position = utility:Position(0, 1, 1, -Size - 1, healthbaroutline)
                         utility:UpdateOffset(healthbar, {Vector2.new(1, healthbaroutline.Size.Y - Size - 1), healthbaroutline})
@@ -1367,7 +1367,7 @@ do
                         }, window.VisualPreview.Drawings)
                         --
                         local preview_distance = utility:Create("TextLabel", {Vector2.new(preview_box.Size.X / 2, preview_box.Size.Y + 5), preview_box}, {
-                            Text = "25m",
+                            Text = "[ Weapon ]",
                             Size = theme.textsize,
                             Font = theme.font,
                             Color = theme.textcolor,
@@ -1377,7 +1377,7 @@ do
                         }, window.VisualPreview.Drawings)
                         --
                         local preview_tool = utility:Create("TextLabel", {Vector2.new(preview_box.Size.X / 2, preview_box.Size.Y + 20), preview_box}, {
-                            Text = "Weapon",
+                            Text = "57m",
                             Size = theme.textsize,
                             Font = theme.font,
                             Color = theme.textcolor,
