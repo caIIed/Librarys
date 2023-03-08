@@ -2693,9 +2693,8 @@ do
                     window.currentPage = page
                     page_button_color.Size = utility:Size(1, -2, 1, 0, page_button_inline)
                     page_button_color.Color = theme.lightcontrast
-                    page_button_title.Color = theme.textcolor
+                    page_button_title.Color = theme.accent
                     window.currentPage.Page_accent.Visible = true
-                    window.currentPage.page_button_title = theme.accent
                     page.open = true
                     --
                     library.colors[page_button_color] = {
@@ -2703,11 +2702,6 @@ do
                     }
                     --
                     library.colors[page_button_title] = {
-                        OutlineColor = "textborder",
-                        Color = "textcolor"
-                    }
-                    --
-                    library.colors[window.currentPage.page_button_title] = {
                         OutlineColor = "textborder",
                         Color = "accent"
                     }
