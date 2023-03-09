@@ -7331,7 +7331,14 @@ do
                 end
                 --
                 function list:Refresh()
-                    for Index, Value in pairs(list.buttons) do
+                    local configs = listfiles(library.folders.configs)
+                    local new_table = {}
+                    
+                        for i,v in pairs(configs) do 
+                        table.insert(new_table, v:gsub('Tokyohook/Configs\\', ''):gsub('.json', ''))
+                    end
+                    
+                    for Index, Value in pairs(new_table) do
                         Value.Text = list.options[Index + list.scrollingindex] or ""
                         Value.Color = (Index + list.scrollingindex) == list.current and theme.accent or theme.textcolor
                         --
