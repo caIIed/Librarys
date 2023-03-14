@@ -1229,7 +1229,7 @@ do
                         if not (window.VisualPreview.Size[Side] == Size) then
                             window.VisualPreview.Size[Side] = Size
                             --
-                            esppreview_frame.Size = utility:Size(0, 231 + window.VisualPreview.Size[Side], 0, 352.5) -- 339
+                            esppreview_frame.Size = utility:Size(0, 231 + window.VisualPreview.Size[Side], 0, 339) -- 339
                             esppreview_inline.Size = utility:Size(1, -2, 1, -2, esppreview_frame)
                             esppreview_inner.Size = utility:Size(1, -2, 1, -2, esppreview_inline)
                             esppreview_inner_inline.Size = utility:Size(1, -8, 1, -22, esppreview_inner)
