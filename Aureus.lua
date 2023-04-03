@@ -44,9 +44,9 @@ do
             hovers = {},
             Relations = {},
             folders = {
-                main = "Tokyohook",
-                assets = "Tokyohook/Images",
-                configs = "Tokyohook/Configs"
+                main = "Aureus",
+                assets = "Aureus/Images",
+                configs = "Aureus/Configs"
             },
             shared = {
                 initialized = false,
