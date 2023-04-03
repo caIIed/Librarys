@@ -89,7 +89,7 @@ do
             lightcontrast = Color3.fromRGB(19, 19, 19),
             darkcontrast =Color3.fromRGB(13, 13, 13),
             outline = Color3.fromRGB(0, 0, 0),
-            inline = Color3.fromRGB(28, 28, 28),
+            inline = Color3.fromRGB(42, 42, 42),
             textcolor = Color3.fromRGB(220, 220, 220),
             textdark = Color3.fromRGB(175, 175, 175),
             textborder = Color3.fromRGB(0, 0, 0),
