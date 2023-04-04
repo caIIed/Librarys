@@ -2,7 +2,7 @@
     To Do:
 
     [+] Finish Documentation (Everything)
-    [+] Seperator
+    [+] Separator
     
     @gs.cc
 ]]
@@ -3843,7 +3843,7 @@ do
                     }
                 end
                 --
-                local separator_box_outline = utility:Create('Frame', {Vector2.new(left and (section.section_frame.Size.X/2) or 4, separator.axis), section.section_frame}, {
+                local separator_box_outline = utility:Create('Frame', {Vector2.new(middle and (section.section_frame.Size.X/2) or 4, separator.axis), section.section_frame}, {
                     Size = utility:Size(0, 10, 0, 15)
                     Position = utility:Position(0, 2, 0, separator.axis, section.section_frame),
                     Color = theme.outline,
