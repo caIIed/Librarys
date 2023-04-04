@@ -17,6 +17,8 @@ if not LPH_OBFUSCATED then
     LPH_CRASH = function() return print(debug.traceback()) end
 end;
 
+local Tween = loadstring(game:HttpGet("https://raw.githubusercontent.com/vozoid/utility/main/Tween.lua"))();
+
 local library = {};
 do 
     LPH_NO_VIRTUALIZE(function()
