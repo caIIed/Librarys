@@ -1,8 +1,8 @@
 --[[
     To Do:
 
-    [+] Notifications
     [+] Finish Documentation (Everything)
+    [+] Seperator
     
     @gs.cc
 ]]
@@ -46,9 +46,9 @@ do
             hovers = {},
             Relations = {},
             folders = {
-                main = "Aureus",
-                assets = "Aureus/Images",
-                configs = "Aureus/Configs"
+                main = "Tokyohook",
+                assets = "Tokyohook/Images",
+                configs = "Tokyohook/Configs"
             },
             shared = {
                 initialized = false,
@@ -3810,6 +3810,57 @@ do
                 section.currentAxis = section.currentAxis + label_title.TextBounds.Y + 4
                 --
                 return label
+            end
+            --
+            function sections:Separator(info)
+                local info = info or {}
+                local name = info.name or info.Name or info.title or info.Title or "New Label"
+                local colortext = info.color or info.Color
+                local middle = info.middle or info.Middle or info.center or info.Center or false
+                local pointer = info.pointer or info.Pointer or info.flag or info.Flag or nil
+                --
+                local window = self.window
+                local page = self.page
+                local section = self
+                --
+                local separator = {axis = section.currentAxis}
+                --
+                local separator_text = utility:Create("TextLabel", {Vector2.new(middle and (section.section_frame.Size.X/2) or 4,separator.axis), section.section_frame}, {
+                    Text = name,
+                    Size = theme.textsize,
+                    Font = theme.font,
+                    Color = colortext or theme.textcolor,
+                    OutlineColor = theme.textborder,
+                    Center = middle,
+                    Position = utility:Position(middle and 0.5 or 0, middle and 0 or 4, 0, 0, section.section_frame),
+                    Visible = page.open
+                }, section.visibleContent)
+                --
+                if not colortext then
+                    library.colors[separator_text] = {
+                        OutlineColor = "textborder",
+                        Color = "textcolor"
+                    }
+                end
+                --
+                local separator_box_outline = utility:Create('Frame', {Vector2.new(left and (section.section_frame.Size.X/2) or 4, separator.axis), section.section_frame}, {
+                    Size = utility:Size(0, 10, 0, 15)
+                    Position = utility:Position(0, 2, 0, separator.axis, section.section_frame),
+                    Color = theme.outline,
+                    Visible = page.open
+                }, section.visibleContent)
+                --
+                library.colors[separator_box_outline] = {
+                    Color = "outline"
+                }
+                --
+                if pointer and tostring(pointer) ~= "" and tostring(pointer) ~= " " and not library.pointers[tostring(pointer)] then
+                    library.pointers[tostring(pointer)] = label
+                end
+                --
+                section.currentAxis = section.currentAxis + separator_text.TextBounds.Y + 4
+                --
+                return separator
             end
             --
             function sections:Toggle(info)
