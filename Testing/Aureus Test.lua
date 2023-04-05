@@ -3832,7 +3832,7 @@ do
                     Color = colortext or theme.textcolor,
                     OutlineColor = theme.textborder,
                     Center = true,
-                    Position = utility:Position(0.5, 0, 0, 2--[[middle and 0.5 or 0, middle and 0 or 4, 0, 0]], section.section_frame),
+                    Position = utility:Position(middle and 0.5 or 0, middle and 0 or 4, 0, 0, section.section_frame),
                     Visible = page.open
                 }, section.visibleContent)
                 --
