@@ -2621,7 +2621,7 @@ do
                     OutlineColor = "textborder",
                     Color = "textdark"
                 }
-                
+                --
                 local Page_accent = utility:Create("Frame", {Vector2.new(0,0), page_button_color}, {
                     Size = utility:Size(1, 0, 0, 1, page_button_color),
                     Position = utility:Position(0, 0, 0, 1, page_button_color),
@@ -3831,7 +3831,7 @@ do
                     Font = theme.font,
                     Color = colortext or theme.textcolor,
                     OutlineColor = theme.textborder,
-                    Center = middle,
+                    Center = true,
                     Position = utility:Position(0.5, 0, 0, 2--[[middle and 0.5 or 0, middle and 0 or 4, 0, 0]], section.section_frame),
                     Visible = page.open
                 }, section.visibleContent)
