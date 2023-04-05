@@ -3843,19 +3843,19 @@ do
                     }
                 end
                 --
-                local separator_box_outline = utility:Create('Frame', {Vector2.new(middle and (section.section_frame.Size.X/2) or 4, separator.axis), section.section_frame}, {
+                local separator_box = utility:Create('Frame', {Vector2.new(4, separator.axis), section.section_frame}, {
                     Size = utility:Size(0, 10, 0, 15)
                     Position = utility:Position(0, 2, 0, separator.axis, section.section_frame),
                     Color = theme.outline,
                     Visible = page.open
                 }, section.visibleContent)
                 --
-                library.colors[separator_box_outline] = {
+                library.colors[separator_box] = {
                     Color = "outline"
                 }
                 --
                 if pointer and tostring(pointer) ~= "" and tostring(pointer) ~= " " and not library.pointers[tostring(pointer)] then
-                    library.pointers[tostring(pointer)] = label
+                    library.pointers[tostring(pointer)] = separator
                 end
                 --
                 section.currentAxis = section.currentAxis + separator_text.TextBounds.Y + 4
