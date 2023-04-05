@@ -3825,14 +3825,14 @@ do
                 --
                 local separator = {axis = section.currentAxis}
                 --
-                local separator_text = utility:Create("TextLabel", {Vector2.new(middle and (section.section_frame.Size.X/2) or 4,separator.axis), section.section_frame}, {
+                local separator_text = utility:Create("TextLabel", {Vector2.new(true and (section.section_frame.Size.X/2) or 4,separator.axis), section.section_frame}, {
                     Text = name,
                     Size = theme.textsize,
                     Font = theme.font,
                     Color = colortext or theme.textcolor,
                     OutlineColor = theme.textborder,
                     Center = true,
-                    Position = utility:Position(middle and 0.5 or 0, middle and 0 or 4, 0, 0, section.section_frame),
+                    Position = utility:Position(true and 0.5 or 0, true and 0 or 4, 0, 0, section.section_frame),
                     Visible = page.open
                 }, section.visibleContent)
                 --
@@ -3843,7 +3843,7 @@ do
                     }
                 end
                 --
-                local separator_box = utility:Create('Frame', {Vector2.new(4, separator.axis), section.section_frame}, {
+                local separator_box = utility:Create("Frame", {Vector2.new(4, separator.axis), section.section_frame}, {
                     Size = utility:Size(0, 30, 0, 7),
                     Position = utility:Position(0, 2, 0, separator.axis, section.section_frame),
                     Color = theme.lightcontrast,
