@@ -3832,7 +3832,7 @@ do
                     Color = colortext or theme.textcolor,
                     OutlineColor = theme.textborder,
                     Center = middle,
-                    Position = utility:Position(middle and 0.5 or 0, middle and 0 or 4, 0, 0, section.section_frame),
+                    Position = utility:Position(0.5, 0, 0, 2--[[middle and 0.5 or 0, middle and 0 or 4, 0, 0]], section.section_frame),
                     Visible = page.open
                 }, section.visibleContent)
                 --
@@ -3844,21 +3844,21 @@ do
                 end
                 --
                 local separator_box = utility:Create('Frame', {Vector2.new(4, separator.axis), section.section_frame}, {
-                    Size = utility:Size(0, 10, 0, 15),
+                    Size = utility:Size(0, 30, 0, 7),
                     Position = utility:Position(0, 2, 0, separator.axis, section.section_frame),
-                    Color = theme.outline,
+                    Color = theme.lightcontrast,
                     Visible = page.open,
                 }, section.visibleContent)
                 --
                 library.colors[separator_box] = {
-                    Color = "outline"
+                    Color = "lightcontrast"
                 }
                 --
                 if pointer and tostring(pointer) ~= "" and tostring(pointer) ~= " " and not library.pointers[tostring(pointer)] then
                     library.pointers[tostring(pointer)] = separator
                 end
                 --
-                section.currentAxis = section.currentAxis + separator_text.TextBounds.Y + 4
+                section.currentAxis = section.currentAxisZ + separator_text.TextBounds.Y + 4
                 --
                 return separator
             end
