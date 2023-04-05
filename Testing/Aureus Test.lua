@@ -3858,7 +3858,7 @@ do
                     library.pointers[tostring(pointer)] = separator
                 end
                 --
-                section.currentAxis = section.currentAxisZ + separator_text.TextBounds.Y + 4
+                section.currentAxis = section.currentAxis + separator_text.TextBounds.Y + 4
                 --
                 return separator
             end
