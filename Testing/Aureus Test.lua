@@ -3844,10 +3844,10 @@ do
                 end
                 --
                 local separator_box = utility:Create('Frame', {Vector2.new(4, separator.axis), section.section_frame}, {
-                    Size = utility:Size(0, 10, 0, 15)
+                    Size = utility:Size(0, 10, 0, 15),
                     Position = utility:Position(0, 2, 0, separator.axis, section.section_frame),
                     Color = theme.outline,
-                    Visible = page.open
+                    Visible = page.open,
                 }, section.visibleContent)
                 --
                 library.colors[separator_box] = {
