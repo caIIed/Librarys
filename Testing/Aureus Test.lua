@@ -2,7 +2,7 @@
     To Do:
 
     [+] Finish Documentation (Everything)
-    [+] Separator
+    [+] Seperator
     
     @gs.cc
 ]]
