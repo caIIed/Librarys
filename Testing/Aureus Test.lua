@@ -3648,7 +3648,7 @@ do
                         library.Relations[Relation[1].UserId] = Relation[3] ~= "None" and Relation[3] or nil
                     end
                     --
-                    playerList_title.Text = ("Player List - %s Players"):format(#playerList.items - 1)
+                    playerList_title.Text = ("Player List - ".. tostring(#plrs:GetPlayers()) .. " Players")
                     --
                     local Selection = playerList:GetSelection()
                     --
@@ -3689,7 +3689,7 @@ do
                 utility:Connection(plrs.PlayerAdded, function(Player)
                     playerList.players[#playerList.players + 1] = {Player, Player.Name, "None", false}
                     --
-                    playerList_title.Text = ("Player List - " .. #plrs:GetPlayers() .. " Players"):format
+                    playerList_title.Text = ("Player List - " .. tostring(#plrs:GetPlayers()) .. " Players")
                     --
                     playerList:UpdateScroll()
                 end)
