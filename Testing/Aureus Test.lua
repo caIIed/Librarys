@@ -29,6 +29,8 @@ do
         --
         local mouse = localplayer:GetMouse()
         --
+        local PlayerCount = #plrs:GetPlayers()
+        --
         local Remove = table.remove
         local Unpack = table.unpack
         local Find = table.find
@@ -3686,6 +3688,8 @@ do
                 --
                 utility:Connection(plrs.PlayerAdded, function(Player)
                     playerList.players[#playerList.players + 1] = {Player, Player.Name, "None", false}
+                    --
+                    playerList_title.Text = ("Player List - " .. #plrs:GetPlayers() .. " Players"):format
                     --
                     playerList:UpdateScroll()
                 end)
