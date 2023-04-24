@@ -1404,7 +1404,7 @@ do
                         do -- Chams
                             for Index = 1, 2 do
                                 local transparency = Index == 1 and 0.75 or 0.5
-                                local color = Index == 1 and Color3.fromRGB(176, 176, 176) or Color3.fromRGB(176, 176, 176)
+                                local color = Index == 1 and Color3.fromRGB(93, 62, 152) or Color3.fromRGB(255, 255, 255)
                                 --
                                 local extrasize = Index == 1 and 4 or 0
                                 local extraoffset = Index == 1 and -2 or 0
@@ -7389,8 +7389,9 @@ do
                     list:Refresh()
                 end
                 --
-                function list:Refresh()
-                    for Index, Value in pairs(list.buttons) do
+                function list:Refresh(whatto) -- || Leadmarker
+                    local update_list = whatto or list.buttons
+                    for Index, Value in pairs(update_list) do
                         Value.Text = list.options[Index + list.scrollingindex] or ""
                         Value.Color = (Index + list.scrollingindex) == list.current and theme.accent or theme.textcolor
                         --
