@@ -2101,7 +2101,7 @@ function Menu.Notify(Content: string, Delay: number)
     Text.Position = UDim2.new(0.5, -100, 1, -150 - (GetDictionaryLength(Notifications) * 15))
     Text.Size = UDim2.new(0, 0, 0, 15)
     Text.Text = Content
-    Text.Font = Enum.Font.Code
+    Text.Font = Enum.Font.SourceSans
     Text.TextSize = 17
     Text.TextColor3 = Color3.new(1, 1, 1)
     Text.TextStrokeTransparency = 0.2
