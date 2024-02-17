@@ -5,10 +5,9 @@ local startUpArgs = getgenv().startUpArgs or { 'universal', 'public' }
     --made by Portal#4849
     --LEAKED BY FIJI https://v3rmillion.net/showthread.php?tid=1208282
 --]]
-local exp_type = (identifyexecutor() == 'Krnl' and Krnl) or Fluxus
 
-local drawing  = loadstring(exp_type.request({Url = 'https://gist.githubusercontent.com/0f76/9dc85c8c380d895373dd306fd372fa59/raw/e2abc40c2b5f159d61b10558c86e4f98823e30f5/drawing_extension.lua', Method = 'GET'}).Body)()
-local tween = loadstring(exp_type.request({Url = 'https://gist.githubusercontent.com/0f76/1661258383c3c320ac5af2c9dd923fd5/raw/ee3c79b95eafa3b732127a0a7d37a4dc43b3bd60/custom_tween.lua', Method = 'GET'}).Body)()
+local drawing  = loadstring(request({Url = 'https://gist.githubusercontent.com/0f76/9dc85c8c380d895373dd306fd372fa59/raw/e2abc40c2b5f159d61b10558c86e4f98823e30f5/drawing_extension.lua', Method = 'GET'}).Body)()
+local tween = loadstring(request({Url = 'https://gist.githubusercontent.com/0f76/1661258383c3c320ac5af2c9dd923fd5/raw/ee3c79b95eafa3b732127a0a7d37a4dc43b3bd60/custom_tween.lua', Method = 'GET'}).Body)()
 local services = setmetatable({}, {
     __index = function(_, k)
         k = (k == "InputService" and "UserInputService") or k
@@ -188,7 +187,7 @@ local themes = { -- ignore
 }
 local themeobjects = {};
 local library = {priorities = {}, friends = {}, notiflist = {ntifs = {}, interval = 12}, settings = {folder_name = "seere/"..startUpArgs[1];default_accent = Color3.fromRGB(255,255,255)}, drawings = {}, theme = table.clone(themes.Default),currentcolor = nil, flags = {}, open = false, mousestate = services.InputService.MouseIconEnabled, cursor = nil, holder = nil, connections = {}, notifications = {}, gradient = nil};
-local decode = (exp_type and exp_type.crypt.base64.decode) or (crypt and crypt.base64decode) or base64_decode;
+local decode = (exp_type and crypt.base64.decode) or (crypt and crypt.base64decode) or base64_decode;
 local flags = {};
 local configignores = {};
 local visValues = {};
